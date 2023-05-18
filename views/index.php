@@ -51,7 +51,7 @@
            
             <div class="info">
                 <h1>Movimentações</h1>
-                <table>
+                <tableq>
                     <th>Cód Pedido</th>
                     <th>Fornecedor</th>
                     <th>Valor a pagar</th>
