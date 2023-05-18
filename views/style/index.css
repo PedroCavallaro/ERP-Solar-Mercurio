@@ -86,6 +86,13 @@ nav > div {
     border-radius: 15px;
     font-weight: bold;
     font-size: 20px;
+    cursor: pointer;
+}
+
+.buttons-container > input[type="button"]:hover{
+    background-color: #bcbcbc;
+    transition: 0.5s ease;
+
 }
 .mercury-container{
     display: flex;

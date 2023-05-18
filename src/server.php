@@ -38,7 +38,9 @@ function commitment(){
 
 function status($data){
         if($data == null){
-            return "pendente";
+            return "Pendente";
+        }else{
+            return "Pago";
         }
 }
 ?>
