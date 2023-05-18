@@ -1,3 +1,6 @@
+<?php
+    include_once "../src/server.php"
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -46,12 +49,15 @@
                     <th>Valor a pagar</th>
                     <th>Data de Vencimento</th>
                     <th>Status</th>
+                 <tbody>
+                    <?=commitment()?>
+                </tbody>
                 </table>
             </div>
            
             <div class="info">
                 <h1>Movimentações</h1>
-                <tableq>
+                <table>
                     <th>Cód Pedido</th>
                     <th>Fornecedor</th>
                     <th>Valor a pagar</th>

@@ -29,6 +29,9 @@ nav{
     column-gap: 2rem;
     
 }
+td{
+    text-align: center;
+}
 table{
     margin-top: 5px;
     margin-left: 1rem;
