@@ -26,7 +26,7 @@ include_once "../src/supplier.php"
         </nav>
     </header>
     <main>
-        <section class="left-menu">
+        <section class="left-menu"> 
             <div class="buttons-container">
                 <a href="./index.php"><input type="button" value="Página Inicial"></a>
                 <a href="./commitments.php"><input type="button" value="Compromissos"></a>
