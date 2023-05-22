@@ -124,14 +124,14 @@ nav > div {
 
 @keyframes mercuryAnimation {
   0% {
-    width: 0px;
+    /* width: 0px; */
     transform: translateY(0.5rem);
   }
   50% {
     transform: translateY(-0.5rem);
   }
   100% {
-    width: 100%;
+    /* width: 100%; */
 
     transform: translateY(0.5rem);
   }
