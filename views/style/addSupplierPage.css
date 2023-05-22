@@ -29,42 +29,6 @@ nav {
   display: flex;
   column-gap: 2rem;
 }
-td {
-  text-align: center;
-}
-
-table {
-  margin-top: 5px;
-  /* margin-left: 5px; */
-  width: 100%;
-  background-color: var(--button-color);
-  border: solid 2px black;
-  border-radius: var(--radius);
-}
-.headInfo{
-    display: flex;
-    justify-content: space-between;
-}
-#addSupplier{
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    padding-right:2px;
-    padding-top:2px;
-}
-#addSupplier > a > input[type="submit"]{
-    cursor: pointer;
-    background-color: #06FA03;
-    color: black;
-    font-weight: bold;
-    border:1px solid black;
-    border-radius: var(--radius);
-    padding: 3px;
-}
-#addSupplier > a >input[type="submit"]:hover{
-    background-color: #369a35;
-    transition: 0.7s ease;
-}
 .navImg {
   color: black;
   width: 2rem;
@@ -145,18 +109,92 @@ nav > div {
   border: solid 2px black;
   padding: 2px;
 }
+.info > div{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 5px;
+}
+.info > div > label{
+    border: 2px solid black;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    column-gap: 0.5rem;
+    width: 99%;
+    height: 1.5rem;
+    background-color: var(--button-color);
+    border-radius: var(--radius);
+    padding: 5px;
+}
+.info > div > label > input[type="text"]{
+    position: relative;
+    width: 70%;
+    background-color: var(--button-color);
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+}
 
+.extraInfo{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 1rem;
+}
+.extraInfo > label{
+    border: 2px solid black;
+    height: 1.5rem;
+    padding: 5px;
+    background-color: var(--button-color);
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+.extraInfo > label > input[type="text"]{
+    width: 90%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+    background-color: var(--button-color);
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.actions{
+    cursor: pointer;
+    background-color: var(--button-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5rem;
+    padding: 4px;
+    border-radius: var(--radius);
+    border: 2px solid black;
+}
+.actions:hover{
+    background-color: #bcbcbc;
+    transition: 0.5s ease;   
+}
+.actions > img{
+    width: 2.4rem;
+    height: 1.5rem;
+}
+.actionButton{
+   all: unset;
+}
 @keyframes mercuryAnimation {
   0% {
-    /* width: 0px; */
     transform: translateY(0.5rem);
   }
   50% {
     transform: translateY(-0.5rem);
   }
-  100% {
-    /* width: 100%; */
-
+  100% {    
     transform: translateY(0.5rem);
   }
 }
