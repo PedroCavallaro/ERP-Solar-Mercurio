@@ -50,7 +50,43 @@
                     </a>
                 </div>
 
-                <form action="./"></form>
+                <form action="./" method="POST">
+                    <div>
+                        <label for="cod-pedido">Código do Pedido
+                            <input type="text" value="" id="cod-pedido" name="cod-pedido">
+                        </label>
+
+                        <label for="fornecedor">Fornecedor
+                            <select name="" id=""></select>
+                        </label>
+
+                        <div class="col">
+                            <label for="valor">Valor
+                                <input type="number" value="" id="valor" name="valor" step="0.01">
+                            </label>
+                            <label for="dt-vencimento">Vencimento
+                                <input type="date" value="" id="dt-vencimento" name="dt-vencimento">
+                            </label>
+                        </div>
+
+                        <label for="valor-pago">Valor Pago
+                            <input type="number" value="" id="valor-pago" name="valor-pago" step="0.01">
+                        </label>
+
+                        <label for="dt-pagamento">Data de Pagamento
+                            <input type="date" value="" id="dt-pagamento" name="dt-pagamento">
+                        </label>
+
+                        <label for="tipo-compromisso">Tipo do Compromisso
+                            <select name="" id=""></select>
+                        </label>
+
+                        <label for="observacoes">Observação
+                            <textarea name="observacoes" id="observacoes"></textarea>
+                        </label>
+                    </div>
+                    <input type="submit" value="Cadastrar">
+                </form>
             </div>
         </section>
     </main>
