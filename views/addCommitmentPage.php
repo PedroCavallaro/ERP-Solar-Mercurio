@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contas a Pagar - Novo Compromissos</title>
     <link rel="stylesheet" href="./style/index.css">
-    <title>Contas a Pagar - Compromissos</title>
+    <link rel="stylesheet" href="./style/addCommitimentPage.css">
 </head>
-
-<?php
-include_once "../src/index.php"
-?>
 
 <body>
     <header>
@@ -41,35 +38,19 @@ include_once "../src/index.php"
                 </div>
                 <div class="planet-name">
                     <h1>Mercúrio</h1>
-
                 </div>
             </div>
         </section>
         <section class="rigth-menu">
             <div class="info">
-
                 <div class="head-info">
                     <h1>Compromissos</h1>
-                    <a href="./addCommitmentPage.php">
-                        <input type="button" value="Adicionar">
+                    <a href="./commitments.php">
+                        <input id="close-button" type="button" value="Fechar">
                     </a>
                 </div>
 
-                <table>
-                    <th>Cód Pedido</th>
-                    <th>Fornecedor</th>
-                    <th>Valor a pagar</th>
-                    <th>Data de Vencimento</th>
-                    <th>Valor Pago</th>
-                    <th>Data de Pagamento</th>
-                    <th>Tipo do Compromisso</th>
-                    <th>Status</th>
-                    <th>Observação</th>
-                    <th>Ação</th>
-                    <tbody>
-                        <?= commitmentFull() ?>
-                    </tbody>
-                </table>
+                <form action="./"></form>
             </div>
         </section>
     </main>

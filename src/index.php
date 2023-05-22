@@ -29,7 +29,7 @@ function commitment() {
 function commitmentFull() {
     $bd = connect();
 
-    $sql = "SELECT c.cd_pedido, f.nm_fornecedor, c.nr_valor, c.dt_vencimento, c.nr_valor_pago, c.dt_pagamento, t.ds_tipo, c.ds_observacao
+    $sql = "SELECT c.id_compromisso, c.cd_pedido, f.nm_fornecedor, c.nr_valor, c.dt_vencimento, c.nr_valor_pago, c.dt_pagamento, t.ds_tipo, c.ds_observacao
         FROM compromissos c INNER JOIN tipo_compromisso t ON
             c.id_tipo = t.id_tipo
         INNER JOIN fornecedores f ON
@@ -55,6 +55,16 @@ function commitmentFull() {
             <td>" . $data["ds_tipo"] . "</td>
             <td>" . status($data["nr_valor_pago"]) . "</td>
             <td>" . $data["ds_observacao"] . "</td>
+            <td>
+                <div class='actions-buttons'>
+                    <a id='edit-button' href='editCommitment.php/id=" . $data["id_compromisso"] . "'>
+                        <input type='button' value='Editar' />
+                    </a>
+                    <a id='del-button' href='delCommitment.php/id=" . $data["id_compromisso"] . "'>
+                        <input type='button' value='Excluir' />
+                    </a>
+                </div>
+            </td>
         </tr>
         ";
     }
