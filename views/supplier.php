@@ -45,21 +45,20 @@ include_once "../src/supplier.php"
         </section>
         <section class="rigth-menu">
             <div class="info">
-                <div>
-                    <form action="" method="post">
-                        <h1>Fornecedores</h1>
-                        <label id="addSupplier" for="">
-                            <img id="addButton" src="./assets/adicionar.png" alt="">
-                            <input type="submit" value="Adicionar">
-                        </label>
-                    </form>
+                <div class="headInfo">
+                    <h1>Fornecedores</h1>
+                    <label id="addSupplier" for="sub">
+                        <a href="./addSupplierPage.php">
+                            <input type="submit" id='sub'value="Adicionar">
+                        </a>
+                    </label>
                 </div>
                 <table>
-                    <th>Nome</th>
-                    <th>CNPJ</th>
-                    <th>Email</th>
-                    <th>Contato</th>
-                    <th>Ações</th>
+                    <th>Nome:</th>
+                    <th>CNPJ:</th>
+                    <th>Email:</th>
+                    <th>Contato:</th>
+                    <th>Ações:</th>
                     <tbody>
                         <?=getSuppliers()?>
                     </tbody>
