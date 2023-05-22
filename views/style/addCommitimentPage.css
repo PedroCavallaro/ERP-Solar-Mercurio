@@ -1,7 +1,108 @@
 :root {
   --close-button-color: rgb(240, 128, 128);
+  --confirm-button-color: #4caf50;
+  --radius: 10px;
+  --button-color: #ebebeb;
 }
 
 #close-button {
+  padding: 5px 15px;
+  margin-bottom: 2px;
   background-color: var(--close-button-color);
+  border: solid 2px #000;
+}
+
+#close-button:hover {
+  background-color: rgb(240, 84, 84);
+  transition: 0.7s ease;
+}
+
+form {
+  background-color: white;
+  border-radius: var(--radius);
+  border: solid 2px black;
+  padding: 2px;
+}
+
+form > div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 5px;
+}
+
+form > div > label {
+  border: 2px solid black;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  column-gap: 0.5rem;
+  width: 99%;
+  height: fit-content;
+  background-color: var(--button-color);
+  border-radius: var(--radius);
+  padding: 5px;
+  gap: 1rem;
+}
+
+form > div > label > input,
+select {
+  position: relative;
+  width: 90%;
+  background-color: var(--button-color);
+  border: none;
+  outline: none;
+  border-bottom: 2px solid black;
+}
+
+textarea {
+  resize: none;
+  height: 7rem;
+  width: 90%;
+  padding: 5px;
+}
+
+.col {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.col > label {
+  border: 2px solid black;
+  border-radius: var(--radius);
+  height: 1.5rem;
+  padding: 5px;
+  background-color: var(--button-color);
+
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.col > label > input {
+  width: 90%;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid black;
+  background-color: var(--button-color);
+  margin-left: 10px;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  border: solid 2px #000;
+  border-radius: var(--radius);
+  background-color: var(--confirm-button-color);
+  display: block;
+  margin-left: auto;
+  padding: 5px 15px;
+  font-weight: bold;
+}
+
+input[type="submit"]:hover {
+  background-color: #23c028;
+  transition: 0.7s ease;
 }
