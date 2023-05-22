@@ -26,7 +26,7 @@ include_once "../src/supplier.php"
         </nav>
     </header>
     <main>
-        <section class="left-menu"> 
+        <section class="left-menu">
             <div class="buttons-container">
                 <a href="./index.php"><input type="button" value="Página Inicial"></a>
                 <a href="./commitments.php"><input type="button" value="Compromissos"></a>
@@ -44,7 +44,7 @@ include_once "../src/supplier.php"
             </div>
         </section>
         <section class="rigth-menu">
-            <form class="info">
+            <form class="info" action="./index.php" method="post">
                 <h1>Cadastro de Fornecedor</h1>
                 <div>
                     <label for="">
@@ -88,20 +88,8 @@ include_once "../src/supplier.php"
                             <input name="supExtra" type="text">
                         </label>
                     </div>
-                    <footer>
-                            <div class="actions">
-                                <img src="./assets/cancel.png" alt="">
-                                <input type="button" class="actionButton" value="Cancelar">
-                            </div>
-                        <h1>Mercúrio</h1>
-                        <div class="actions">
-                            <img src="./assets/check.png" alt="">
-                            <input type="submit" class="actionButton" id="sendInfo" value="Cadastrar">
-                        </div>
-                    </footer>
                 </div>
-                <input type="submit" class="actionButton" id="sendInfo" value="Cadastrar">
-
+                <input type="submit" class="actions" value="Cadastrar">
             </form>
         </section>
     </main>

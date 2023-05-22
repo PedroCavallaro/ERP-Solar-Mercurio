@@ -34,6 +34,10 @@ nav {
   width: 2rem;
   height: 2rem;
 }
+#sendInfo{
+  position: relative;
+  right: -92%;
+}
 nav > div {
   margin-top: 10px;
   margin-left: 10px;
@@ -171,6 +175,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    
     height: 1.5rem;
     padding: 4px;
     border-radius: var(--radius);
