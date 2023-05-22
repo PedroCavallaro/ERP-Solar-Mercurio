@@ -122,6 +122,38 @@ nav > div {
   padding: 2px;
 }
 
+.head-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head-info > a > input {
+  cursor: pointer;
+  background-color: #06fa03;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: var(--radius);
+  padding: 4px;
+}
+
+.actions-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.actions-buttons > a > input {
+  cursor: pointer;
+  padding: 4px;
+  background-color: rgb(122, 137, 226);
+  border: solid 1px #000;
+  border-radius: var(--radius);
+  font-weight: bold;
+}
+
 @keyframes mercuryAnimation {
   0% {
     /* width: 0px; */

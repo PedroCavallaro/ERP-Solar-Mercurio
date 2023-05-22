@@ -1,0 +1,7 @@
+:root {
+  --close-button-color: rgb(240, 128, 128);
+}
+
+#close-button {
+  background-color: var(--close-button-color);
+}
