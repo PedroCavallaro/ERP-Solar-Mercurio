@@ -49,39 +49,43 @@ include_once "../src/supplier.php"
                 <div>
                     <label for="">
                         Nome:
-                        <input type="text">
+                        <input class="info" name="supName" type="text">
                     </label>
                     <label for="">
                         CNPJ:
-                        <input type="text">
+                        <input class="info" name="supCnpj" type="text">
                     </label>
                     <label for="">
                         Número de contato:
-                        <input type="text">
+                        <input class="info" name="nrContact" type="text">
                     </label>
                     <label for="">
                         E-mail:
-                        <input type="text">
+                        <input class="info" name="supEmail" type="text">
+                    </label>
+                    <label for="">
+                        CEP:
+                        <input class="info" name="supCep" type="text">
                     </label>
                     <label for="">
                         Cidade:
-                        <input type="text">
+                        <input class="info" id="localidade" name="supCity" type="text">
                     </label>
                     <label for="">
                         Logradouro:
-                        <input type="text">
+                        <input  class="info" id="logradouro" name="supLog" type="text">
                     </label>
                     <label for="">
                         Bairro:
-                        <input type="text">
-                    </label>
+                        <input class="info" id="bairro" name="supNeighbohood" type="text">
+                    </label> 
                     <div class="extraInfo">
                         <label for="">Número:
-                            <input type="text">
+                            <input class="info" name="supNumber" type="text">
                         </label>
                         <label for="">
                             Complemento:
-                            <input type="text">
+                            <input name="supExtra" type="text">
                         </label>
                     </div>
                     <footer>
@@ -92,14 +96,17 @@ include_once "../src/supplier.php"
                         <h1>Mercúrio</h1>
                         <div class="actions">
                             <img src="./assets/check.png" alt="">
-                            <input type="submit" class="actionButton" value="Cadastrar">
+                            <input type="submit" class="actionButton" id="sendInfo" value="Cadastrar">
                         </div>
                     </footer>
                 </div>
+                <input type="submit" class="actionButton" id="sendInfo" value="Cadastrar">
+
             </form>
         </section>
     </main>
 </body>
-<script src="https://use.fontawesome.com/1278951f00.js"></script>
+
+<script src="./dist/addSupplier.js"></script>
 
 </html>

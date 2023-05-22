@@ -148,7 +148,7 @@ nav > div {
     height: 1.5rem;
     padding: 5px;
     background-color: var(--button-color);
-    border-radius: var(--radius);
+  
     display: flex;
     justify-content: flex-start;
     width: 100%;
