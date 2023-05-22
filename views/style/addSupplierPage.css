@@ -34,10 +34,6 @@ nav {
   width: 2rem;
   height: 2rem;
 }
-#sendInfo{
-  position: relative;
-  right: -92%;
-}
 nav > div {
   margin-top: 10px;
   margin-left: 10px;
@@ -152,7 +148,7 @@ nav > div {
     height: 1.5rem;
     padding: 5px;
     background-color: var(--button-color);
-  
+    border-radius: var(--radius);
     display: flex;
     justify-content: flex-start;
     width: 100%;
@@ -175,7 +171,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    border-radius: var(--radius);
     height: 1.5rem;
     padding: 4px;
     border-radius: var(--radius);
@@ -185,13 +181,53 @@ footer{
     background-color: #bcbcbc;
     transition: 0.5s ease;   
 }
-.actions > img{
+#formFoot{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#submitContainer > img{
     width: 2.4rem;
     height: 1.5rem;
+}
+#submitContainer{
+  cursor: pointer;
+  background-color: var(--button-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius);
+  height: 1.5rem;
+  padding: 4px;
+  width: 8rem;
+  border-radius: var(--radius);
+  border: 2px solid black;  
+}
+#cancel{
+  cursor: pointer;
+  background-color: var(--button-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius);
+  height: 1.5rem;
+  padding: 4px;
+  width: 8rem;
+  border-radius: var(--radius);
+  border: 2px solid black;  
+}
+#cancel > img{
+  width: 2.4rem;
+  height: 1.5rem;
 }
 .actionButton{
    all: unset;
 }
+#sendInfo{
+  all:unset;
+  padding: 2px;
+}
+
 @keyframes mercuryAnimation {
   0% {
     transform: translateY(0.5rem);

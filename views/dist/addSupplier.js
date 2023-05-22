@@ -16,13 +16,11 @@ info[5].addEventListener('blur', async () => {
     }
 });
 sendInfo?.addEventListener('click', (e) => {
-    let test = info.forEach((e) => {
-        if (e.value === " ") {
-            return false;
+    e.preventDefault();
+    info.forEach((ele) => {
+        if (ele.value === "") {
+            console.log("a");
+            e.preventDefault();
         }
-        return true;
     });
-    if (!test) {
-        e.preventDefault();
-    }
 });

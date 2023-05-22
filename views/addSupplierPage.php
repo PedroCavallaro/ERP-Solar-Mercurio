@@ -31,7 +31,7 @@ include_once "../src/supplier.php"
                 <a href="./index.php"><input type="button" value="Página Inicial"></a>
                 <a href="./commitments.php"><input type="button" value="Compromissos"></a>
                 <a href="#"><input type="button" value="Movimentações"></a>
-                <a href="#"><input type="button" value="Fornecedores"></a>
+                <a href="./supplier.php"><input type="button" value="Fornecedores"></a>
                 <a href="#"><input type="button" value="Bancos"></a>
             </div>
             <div class="mercury-main-container">
@@ -44,7 +44,8 @@ include_once "../src/supplier.php"
             </div>
         </section>
         <section class="rigth-menu">
-            <form class="info" action="./index.php" method="post">
+            <!-- action="../src/addSuplier.php" -->
+            <form class="info" id="formSupplier"  method="post">
                 <h1>Cadastro de Fornecedor</h1>
                 <div>
                     <label for="">
@@ -89,12 +90,22 @@ include_once "../src/supplier.php"
                         </label>
                     </div>
                 </div>
-                <input type="submit" class="actions" value="Cadastrar">
+                <div id="formFoot">
+                    <label id="cancel" for="">
+                        <img src="assets/cancel.png" alt="">
+                        Cancelar
+                    </label>
+                    <h1>Mercúrio</h1>
+                    <label id="submitContainer" for="sendInfo">
+                        <img src="../views/assets/check.png" alt="">
+                        <input type="submit" id="sendInfo"  value="Cadastrar">
+                    </label>
+                </div>
             </form>
         </section>
     </main>
 </body>
 
-<script src="./dist/addSupplier.js"></script>
+<script type="modules" src="./dist/addSupplier.js"></script>
 
 </html>

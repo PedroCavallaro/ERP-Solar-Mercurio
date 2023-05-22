@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/PedroCavallaro/ERP-Solar-Mercurio#readme",
   "dependencies": {
-    "@types/node": "^20.2.1",
+    "@types/node": "^20.2.3",
+    "sweetalert2": "^11.7.5",
     "typescript": "^5.0.4"
   }
 }

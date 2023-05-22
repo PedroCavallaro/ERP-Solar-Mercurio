@@ -1,6 +1,6 @@
 const info: NodeListOf<HTMLInputElement> = document.querySelectorAll(".info"),
- sendInfo: HTMLInputElement | null = document.querySelector("#sendInfo")
-//cep
+sendInfo: HTMLInputElement | null = document.querySelector("#sendInfo")
+ //cep
 info[5].addEventListener('blur', async ()=>{
     try{
         const response =  await fetch(`https://viacep.com.br/ws/${info[5].value}/json/`)
@@ -17,16 +17,14 @@ info[5].addEventListener('blur', async ()=>{
 
     }
 })
-sendInfo?.addEventListener('click', (button)=>{
-    console.log('oiasodi')
-    info.forEach((e)=>{
-        if(e.value === ""){
-            console.log("oioi")
-            button.preventDefault()
+sendInfo?.addEventListener('click', (e)=>{
+    e.preventDefault()
+    info.forEach((ele)=>{
+        if(ele.value === ""){
+            console.log("a")
+            e.preventDefault()
         }
     })
-
-
 })
 
 

@@ -29,7 +29,7 @@
                 <a href="./index.php"><input type="button" value="Página Inicial"></a>
                 <a href="./commitments.php"><input type="button" value="Compromissos"></a>
                 <a href="#"><input type="button" value="Movimentações"></a>
-                <a href="#"><input type="button" value="Fornecedores"></a>
+                <a href="./supplier.php"><input type="button" value="Fornecedores"></a>
                 <a href="#"><input type="button" value="Bancos"></a>
             </div>
             <div class="mercury-main-container">
