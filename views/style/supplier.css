@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  overflow: hidden;
+}
+
+:root {
+  --button-color: #ebebeb;
+  --body-color: linear-gradient(90deg, #000000, #555555);
+  --radius: 10px;
+}
+
+html {
+  background: var(--body-color);
+}
+
+main {
+  margin-top: 10px;
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+nav {
+  position: relative;
+  display: flex;
+  column-gap: 2rem;
+}
+td {
+  text-align: center;
+}
+
+table {
+  margin-top: 5px;
+  /* margin-left: 5px; */
+  width: 100%;
+  background-color: var(--button-color);
+  border: solid 2px black;
+  border-radius: var(--radius);
+}
+form{
+    display: flex;
+    justify-content: space-between;
+}
+#addButton{
+    height: 2rem;
+    width: 2rem;
+}
+#addSupplier{
+    display: flex;
+    justify-content: center;
+}
+.navImg {
+  color: black;
+  width: 2rem;
+  height: 2rem;
+}
+nav > div {
+  margin-top: 10px;
+  margin-left: 10px;
+  position: relative;
+  padding: 5px 5px 2px 7px;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  border-radius: 50px;
+  background-color: var(--button-color);
+}
+.left-menu {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  width: 20%;
+  gap: 4rem;
+  border-radius: var(--radius);
+}
+.rigth-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 75%;
+}
+.buttons-container {
+  padding-top: 1rem;
+  row-gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.buttons-container > a > input[type="button"] {
+  width: 17rem;
+  height: 3rem;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.buttons-container > a > input[type="button"]:hover {
+  background-color: #bcbcbc;
+  transition: 0.5s ease;
+}
+.mercury-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12rem;
+}
+.mercury {
+  perspective-origin: left;
+  object-fit: cover;
+  animation: mercuryAnimation 3s ease infinite;
+}
+.mercury-main-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.planet-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info {
+  background-color: white;
+  border-radius: var(--radius);
+  border: solid 2px black;
+  padding: 2px;
+}
+
+@keyframes mercuryAnimation {
+  0% {
+    /* width: 0px; */
+    transform: translateY(0.5rem);
+  }
+  50% {
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    /* width: 100%; */
+
+    transform: translateY(0.5rem);
+  }
+}

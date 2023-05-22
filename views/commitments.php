@@ -10,7 +10,7 @@
 </head>
 
 <?php 
-    include_once "../src/server.php"
+    include_once "../src/index.php"
 ?>
 
 <body>

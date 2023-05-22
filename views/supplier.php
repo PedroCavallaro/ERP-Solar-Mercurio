@@ -1,5 +1,5 @@
 <?php
-include_once "../src/index.php"
+include_once "../src/supplier.php"
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -8,8 +8,8 @@ include_once "../src/index.php"
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contas a Pagar - Home</title>
-    <link rel="stylesheet" href="./style/index.css">
+    <title>Fornecedores</title>
+    <link rel="stylesheet" href="./style/supplier.css">
 </head>
 
 <body>
@@ -31,7 +31,7 @@ include_once "../src/index.php"
                 <a href="./index.php"><input type="button" value="Página Inicial"></a>
                 <a href="./commitments.php"><input type="button" value="Compromissos"></a>
                 <a href="#"><input type="button" value="Movimentações"></a>
-                <a href="./supplier.php"><input type="button" value="Fornecedores"></a>
+                <a href="#"><input type="button" value="Fornecedores"></a>
                 <a href="#"><input type="button" value="Bancos"></a>
             </div>
             <div class="mercury-main-container">
@@ -45,30 +45,26 @@ include_once "../src/index.php"
         </section>
         <section class="rigth-menu">
             <div class="info">
-                <h1>Compromissos</h1>
+                <div>
+                    <form action="" method="post">
+                        <h1>Fornecedores</h1>
+                        <label id="addSupplier" for="">
+                            <img id="addButton" src="./assets/adicionar.png" alt="">
+                            <input type="submit" value="Adicionar">
+                        </label>
+                    </form>
+                </div>
                 <table>
-                    <th>Cód Pedido</th>
-                    <th>Fornecedor</th>
-                    <th>Valor a pagar</th>
-                    <th>Data de Vencimento</th>
-                    <th>Status</th>
+                    <th>Nome</th>
+                    <th>CNPJ</th>
+                    <th>Email</th>
+                    <th>Contato</th>
+                    <th>Ações</th>
                     <tbody>
-                        <?= commitment() ?>
+                        <?=getSuppliers()?>
                     </tbody>
                 </table>
             </div>
-
-            <div class="info">
-                <h1>Movimentações</h1>
-                <table>
-                    <th>Cód Pedido</th>
-                    <th>Fornecedor</th>
-                    <th>Valor a pagar</th>
-                    <th>Data de Vencimento</th>
-                    <th>Status</th>
-                </table>
-            </div>
-
         </section>
     </main>
 </body>
