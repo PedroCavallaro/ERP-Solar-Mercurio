@@ -69,7 +69,7 @@ include_once "../src/supplier.php"
                     </label>
                     <label for="">
                         CEP:
-                        <input class="info" name="supCep" type="text">
+                        <input class="info" pattern="[0-9]" maxlength="8" name="supCep" type="text">
                     </label>
                     <label for="">
                         Cidade:

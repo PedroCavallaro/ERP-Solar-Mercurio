@@ -30,7 +30,7 @@ try{
         $bd->rollBack();
     }
 }catch(Exception){
-    echo"deu erro";
+    header("location:../views/addSupplierPage.php?err=12983918239812");
 }
 
 ?>

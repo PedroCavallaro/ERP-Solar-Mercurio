@@ -1,3 +1,5 @@
+
+
 const info: NodeListOf<HTMLInputElement> = document.querySelectorAll(".info"),
 sendInfo: HTMLInputElement | null = document.querySelector("#sendInfo"),
 formSupplier: HTMLFormElement | null = document.querySelector("#formSupplier") 
@@ -11,7 +13,9 @@ const Toast = Swal.mixin({
   timerProgressBar: true,
 })
 
-
+window.addEventListener('load', ()=>{
+    duplicatedSupplier()
+})
 info[5].addEventListener('blur', async ()=>{
     try{
       
@@ -41,11 +45,23 @@ formSupplier?.addEventListener('submit', (e)=>{
                 icon: 'error',
                 title: 'Preencha os campos necessários'
               })
-        }
+        } else{
+            ele.style.borderBottomColor= "black"
+        }  
+            
     })
 })
-
-
+function duplicatedSupplier(){
+    const Url = new URL(window.location.href)
+    const err = Url.searchParams.get('err')
+    
+    if(err){
+        Toast.fire({
+            icon:'error',
+            title: 'Fornecedor já cadastrado'
+        })
+    }
+}
 
 
 

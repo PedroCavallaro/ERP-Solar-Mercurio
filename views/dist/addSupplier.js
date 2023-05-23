@@ -9,6 +9,9 @@ const Toast = Swal.mixin({
     timer: 2000,
     timerProgressBar: true,
 });
+window.addEventListener('load', () => {
+    duplicatedSupplier();
+});
 info[5].addEventListener('blur', async () => {
     try {
         const response = await fetch(`https://viacep.com.br/ws/${info[5].value}/json/`)
@@ -34,5 +37,18 @@ formSupplier?.addEventListener('submit', (e) => {
                 title: 'Preencha os campos necessários'
             });
         }
+        else {
+            ele.style.borderBottomColor = "black";
+        }
     });
 });
+function duplicatedSupplier() {
+    const Url = new URL(window.location.href);
+    const err = Url.searchParams.get('err');
+    if (err) {
+        Toast.fire({
+            icon: 'error',
+            title: 'Fornecedor já cadastrado'
+        });
+    }
+}

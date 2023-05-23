@@ -1,6 +1,8 @@
 "use strict";
 const infoCommitment = document.querySelectorAll(".info"), formCommitment = document.querySelector("#formCommitment");
-console.log("teste");
+window.addEventListener("load", () => {
+    duplicateCommitment();
+});
 //@ts-ignore
 const Toast = Swal.mixin({
     toast: true,
@@ -20,5 +22,18 @@ formCommitment?.addEventListener("submit", (e) => {
                 title: 'Preencha os campos necessários'
             });
         }
+        else {
+            ele.style.borderBottomColor = "black";
+        }
     });
 });
+function duplicateCommitment() {
+    const Url = new URL(window.location.href);
+    const err = Url.searchParams.get('err');
+    if (err) {
+        Toast.fire({
+            icon: 'error',
+            title: 'Fornecedor já cadastrado'
+        });
+    }
+}
