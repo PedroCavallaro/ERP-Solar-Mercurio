@@ -1,18 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/index.css">
-    <title>Contas a Pagar - Compromissos</title>
+    <link rel="stylesheet" href="./style/addCommitimentPage.css"> 
+    <title>Contas a Pagar - Novo Banco</title>
 </head>
-
-<?php
-include_once "../src/index.php"
-?>
-
 <body>
     <header>
         <nav>
@@ -49,31 +44,38 @@ include_once "../src/index.php"
             <div class="info">
 
                 <div class="head-info">
-                    <h1>Compromissos</h1>
-                    <a href="./addCommitmentPage.php">
-                        <input type="button" value="Adicionar">
+                    <h1>Bancos</h1>
+                    <a href="./banks.php">
+                        <input id="close-button" type="button" value="Fechar">
                     </a>
                 </div>
 
-                <table>
-                    <th>Cód Pedido</th>
-                    <th>Fornecedor</th>
-                    <th>Valor a pagar</th>
-                    <th>Data de Vencimento</th>
-                    <th>Valor Pago</th>
-                    <th>Data de Pagamento</th>
-                    <th>Tipo do Compromisso</th>
-                    <th>Status</th>
-                    <th>Observação</th>
-                    <th>Ação</th>
-                    <tbody>
-                        <?= commitmentFull() ?>
-                    </tbody>
-                </table>
+                <form id="formBank" action="#" method="POST">
+                    <div class="form-main-content">
+                        <label for="num-conta">Número da Conta
+                            <input type="text" class="info" id="num-conta" name="num-conta">
+                        </label>
+
+                        <label for="ag-conta">Agência
+                            <input type="text" class="info" id="ag-conta" name="ag-conta">
+                        </label>
+
+                        <label for="banco-conta"> Banco
+                            <select name="banco-conta" class="info" id="banco-conta"></select>
+                        </label>
+
+                        <label for="tipo-conta">Tipo da Conta
+                            <select name="tipo-conta" class="info" id="tipo-conta"></select>
+                        </label>
+                    </div>
+                    <input type="submit" value="Cadastrar">
+                </form>
             </div>
         </section>
     </main>
- 
 </body>
+
+<script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+<script type="module" src="./dist/addBank.js"></script>
 
 </html>

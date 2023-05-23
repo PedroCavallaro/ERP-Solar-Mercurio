@@ -1,7 +1,7 @@
 "use strict";
-const infoCommitment = document.querySelectorAll(".info"), formCommitment = document.querySelector("#formCommitment");
+const infoBank = document.querySelectorAll(".info"), formBank = document.querySelector("#formBank");
 window.addEventListener("load", () => {
-    duplicateCommitment();
+    bankError();
 });
 //@ts-ignore
 const Toast = Swal.mixin({
@@ -11,8 +11,8 @@ const Toast = Swal.mixin({
     timer: 2000,
     timerProgressBar: true,
 });
-formCommitment?.addEventListener("submit", (e) => {
-    infoCommitment.forEach((ele) => {
+formBank?.addEventListener("submit", (e) => {
+    infoBank.forEach((ele) => {
         if (ele.value === "") {
             e.preventDefault();
             ele.style.animation = "shake 1s";
@@ -27,13 +27,13 @@ formCommitment?.addEventListener("submit", (e) => {
         }
     });
 });
-function duplicateCommitment() {
+function bankError() {
     const Url = new URL(window.location.href);
     const err = Url.searchParams.get("err");
     if (err) {
         Toast.fire({
             icon: "error",
-            title: "Fornecedor já cadastrado",
+            title: "Erro no Cadastro.",
         });
     }
 }

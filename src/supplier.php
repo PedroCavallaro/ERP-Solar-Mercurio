@@ -11,12 +11,22 @@ function getSuppliers() {
     $result = $bd->query($sql);
 
     while ($data = $result->fetch(PDO::FETCH_ASSOC)) {
+        $cnpj = sprintf(
+            '%d%d.%d%d%d.%d%d%d/%d%d%d-%d%d',
+            ...str_split($data["nr_cnpj"])
+        );
+
+        $telefone = sprintf(
+            '(%d%d) %d%d%d%d%d-%d%d%d%d',
+            ...str_split($data["nr_contato"])
+        );
+
         echo "
         <tr>
             <td>" . $data["nm_fornecedor"] . "</td>
-            <td>" . $data["nr_cnpj"] . "</td>
+            <td>" . $cnpj . "</td>
             <td>" . $data["ds_email"] . "</td>
-            <td>" . $data["nr_contato"] . "</td>
+            <td>" . $telefone . "</td>
             <td> <a>Editar</a>
                 <a>Excluir</a>". "</td>
         </tr>";

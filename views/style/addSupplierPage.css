@@ -109,122 +109,122 @@ nav > div {
   border: solid 2px black;
   padding: 2px;
 }
-.info > div{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 5px;
+.info > div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 5px;
 }
-.info > div > label{
-    border: 2px solid black;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
-    column-gap: 0.5rem;
-    width: 99%;
-    height: 1.5rem;
-    background-color: var(--button-color);
-    border-radius: var(--radius);
-    padding: 5px;
+.info > div > label {
+  border: 2px solid black;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  column-gap: 0.5rem;
+  width: 99%;
+  height: 1.5rem;
+  background-color: var(--button-color);
+  border-radius: var(--radius);
+  padding: 5px;
 }
-.info > div > label > input[type="text"]{
-    position: relative;
-    width: 70%;
-    background-color: var(--button-color);
-    border: none;
-    outline: none;
-    border-bottom: 2px solid black;
+.info > div > label > input[type="text"] {
+  position: relative;
+  width: 70%;
+  background-color: var(--button-color);
+  border: none;
+  outline: none;
+  border-bottom: 2px solid black;
 }
 
-.extraInfo{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    gap: 1rem;
+.extraInfo {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 1rem;
 }
-.extraInfo > label{
-    border: 2px solid black;
-    height: 1.5rem;
-    padding: 5px;
-    background-color: var(--button-color);
-    border-radius: var(--radius);
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
+.extraInfo > label {
+  border: 2px solid black;
+  height: 1.5rem;
+  padding: 5px;
+  background-color: var(--button-color);
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
 }
-.extraInfo > label > input[type="text"]{
-    width: 90%;
-    border: none;
-    outline: none;
-    border-bottom: 2px solid black;
-    background-color: var(--button-color);
+.extraInfo > label > input[type="text"] {
+  width: 90%;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid black;
+  background-color: var(--button-color);
 }
-footer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.actions{
-    cursor: pointer;
-    background-color: var(--button-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--radius);
-    height: 1.5rem;
-    padding: 4px;
-    border-radius: var(--radius);
-    border: 2px solid black;
+.actions {
+  cursor: pointer;
+  background-color: var(--button-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius);
+  height: 1.5rem;
+  padding: 4px;
+  border-radius: var(--radius);
+  border: 2px solid black;
 }
-.actions:hover{
-    background-color: #bcbcbc;
-    transition: 0.5s ease;   
+.actions:hover {
+  background-color: #bcbcbc;
+  transition: 0.5s ease;
 }
-#formFoot{
+#formFoot {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-#submitContainer > img{
-    width: 2.4rem;
-    height: 1.5rem;
-}
-#submitContainer{
-  cursor: pointer;
-  background-color: var(--button-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: var(--radius);
-  height: 1.5rem;
-  padding: 4px;
-  width: 8rem;
-  border-radius: var(--radius);
-  border: 2px solid black;  
-}
-#cancel{
-  cursor: pointer;
-  background-color: var(--button-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: var(--radius);
-  height: 1.5rem;
-  padding: 4px;
-  width: 8rem;
-  border-radius: var(--radius);
-  border: 2px solid black;  
-}
-#cancel > img{
+#submitContainer > img {
   width: 2.4rem;
   height: 1.5rem;
 }
-.actionButton{
-   all: unset;
+#submitContainer {
+  cursor: pointer;
+  background-color: var(--button-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius);
+  height: 1.5rem;
+  padding: 4px;
+  width: 8rem;
+  border-radius: var(--radius);
+  border: 2px solid black;
 }
-#sendInfo{
-  all:unset;
+#cancel {
+  cursor: pointer;
+  background-color: var(--button-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius);
+  height: 1.5rem;
+  padding: 4px;
+  width: 8rem;
+  border-radius: var(--radius);
+  border: 2px solid black;
+}
+#cancel > img {
+  width: 2.4rem;
+  height: 1.5rem;
+}
+.actionButton {
+  all: unset;
+}
+#sendInfo {
+  all: unset;
   padding: 2px;
 }
 
@@ -235,24 +235,29 @@ footer{
   50% {
     transform: translateY(-0.5rem);
   }
-  100% {    
+  100% {
     transform: translateY(0.5rem);
   }
 }
 @keyframes shake {
-  10%, 90% {
+  10%,
+  90% {
     transform: translate3d(-1px, 0, 0);
   }
-  
-  20%, 80% {
+
+  20%,
+  80% {
     transform: translate3d(2px, 0, 0);
   }
 
-  30%, 50%, 70% {
+  30%,
+  50%,
+  70% {
     transform: translate3d(-4px, 0, 0);
   }
 
-  40%, 60% {
+  40%,
+  60% {
     transform: translate3d(4px, 0, 0);
   }
 }

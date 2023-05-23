@@ -1,11 +1,11 @@
-const infoCommitment: NodeListOf<HTMLInputElement> =
+const infoBank: NodeListOf<HTMLInputElement> =
     document.querySelectorAll(".info"),
-  formCommitment: HTMLFormElement | null =
-    document.querySelector("#formCommitment");
+  formBank: HTMLFormElement | null = document.querySelector("#formBank");
 
 window.addEventListener("load", () => {
-  duplicateCommitment();
+  bankError();
 });
+
 //@ts-ignore
 const Toast = Swal.mixin({
   toast: true,
@@ -14,12 +14,15 @@ const Toast = Swal.mixin({
   timer: 2000,
   timerProgressBar: true,
 });
-formCommitment?.addEventListener("submit", (e) => {
-  infoCommitment.forEach((ele) => {
+
+formBank?.addEventListener("submit", (e) => {
+  infoBank.forEach((ele) => {
     if (ele.value === "") {
       e.preventDefault();
+
       ele.style.animation = "shake 1s";
       ele.style.borderBottomColor = "red";
+
       Toast.fire({
         icon: "error",
         title: "Preencha os campos necessários",
@@ -29,14 +32,15 @@ formCommitment?.addEventListener("submit", (e) => {
     }
   });
 });
-function duplicateCommitment() {
+
+function bankError() {
   const Url = new URL(window.location.href);
   const err = Url.searchParams.get("err");
 
   if (err) {
     Toast.fire({
       icon: "error",
-      title: "Fornecedor já cadastrado",
+      title: "Erro no Cadastro.",
     });
   }
 }
