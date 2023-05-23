@@ -10,6 +10,9 @@ include_once "../src/supplier.php"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fornecedores</title>
     <link rel="stylesheet" href="./style/addSupplierPage.css">
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="sweetalert2.min.css">
 </head>
 
 <body>
@@ -106,6 +109,6 @@ include_once "../src/supplier.php"
     </main>
 </body>
 
-<script type="modules" src="./dist/addSupplier.js"></script>
+<script src="./dist/addSupplier.js"></script>
 
 </html>
