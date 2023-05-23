@@ -30,7 +30,7 @@ include_once "../src/index.php"
             <div class="buttons-container">
                 <a href="./index.php"><input type="button" value="Página Inicial"></a>
                 <a href="./commitments.php"><input type="button" value="Compromissos"></a>
-                <a href="./movements.php"><input type="button" value="Movimentações"></a>
+                <a href="#"><input type="button" value="Movimentações"></a>
                 <a href="./supplier.php"><input type="button" value="Fornecedores"></a>
                 <a href="#"><input type="button" value="Bancos"></a>
             </div>
@@ -45,20 +45,6 @@ include_once "../src/index.php"
         </section>
         <section class="rigth-menu">
             <div class="info">
-                <h1>Compromissos</h1>
-                <table>
-                    <th>Cód Compromisso</th>
-                    <th>Fornecedor</th>
-                    <th>Valor a pagar</th>
-                    <th>Data de Vencimento</th>
-                    <th>Status</th>
-                    <tbody>
-                        <?= commitment() ?>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="info">
                 <h1>Movimentações</h1>
                 <table>
                     <th>Cód Compromisso</th>    
@@ -70,10 +56,7 @@ include_once "../src/index.php"
                     </tbody>
                 </table>
             </div>
-
         </section>
     </main>
 </body>
-<script src="https://use.fontawesome.com/1278951f00.js"></script>
-
 </html>
