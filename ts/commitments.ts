@@ -1,3 +1,4 @@
+
 const infoCommitment: NodeListOf<HTMLInputElement> = document.querySelectorAll(".info"),
     formCommitment: HTMLFormElement | null = document.querySelector("#formCommitment") 
     console.log("teste")
@@ -8,8 +9,7 @@ const Toast = Swal.mixin({
     showConfirmButton: false,
     timer: 2000,
     timerProgressBar: true,
-    })
-
+  })
 formCommitment?.addEventListener("submit", (e)=>{
     infoCommitment.forEach((ele)=>{
         if(ele.value === ""){

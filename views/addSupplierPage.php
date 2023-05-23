@@ -33,7 +33,7 @@ include_once "../src/supplier.php"
             <div class="buttons-container">
                 <a href="./index.php"><input type="button" value="Página Inicial"></a>
                 <a href="./commitments.php"><input type="button" value="Compromissos"></a>
-                <a href="#"><input type="button" value="Movimentações"></a>
+                <a href="./movements.php"><input type="button" value="Movimentações"></a>
                 <a href="./supplier.php"><input type="button" value="Fornecedores"></a>
                 <a href="#"><input type="button" value="Bancos"></a>
             </div>
@@ -48,7 +48,7 @@ include_once "../src/supplier.php"
         </section>
         <section class="rigth-menu">
             <!-- action="../src/addSuplier.php" -->
-            <form class="info" id="formSupplier"  method="post">
+            <form class="info" id="formSupplier"  action="../src/addSuplier.php" method="post">
                 <h1>Cadastro de Fornecedor</h1>
                 <div>
                     <label for="">
@@ -109,6 +109,6 @@ include_once "../src/supplier.php"
     </main>
 </body>
 
-<script src="./dist/addSupplier.js"></script>
+<script type="module" src="./dist/addSupplier.js"></script>
 
 </html>

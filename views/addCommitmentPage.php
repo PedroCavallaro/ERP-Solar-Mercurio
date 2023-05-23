@@ -1,3 +1,6 @@
+<?php
+include_once "../src/addCommitment.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contas a Pagar - Novo Compromissos</title>
     <link rel="stylesheet" href="./style/index.css">
-    <link rel="stylesheet" href="./style/addCommitimentPage.css">
+    <link rel="stylesheet" href="./style/addCommitimentPage.css"> 
     <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+
     <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
 </head>
 
@@ -30,7 +34,7 @@
             <div class="buttons-container">
                 <a href="./index.php"><input type="button" value="Página Inicial"></a>
                 <a href="./commitments.php"><input type="button" value="Compromissos"></a>
-                <a href="#"><input type="button" value="Movimentações"></a>
+                <a href="./movements.php"><input type="button" value="Movimentações"></a>
                 <a href="./supplier.php"><input type="button" value="Fornecedores"></a>
                 <a href="#"><input type="button" value="Bancos"></a>
             </div>
@@ -58,7 +62,10 @@
                         </label>
 
                         <label for="fornecedor">Fornecedor
-                            <select name="" class="info" id=""></select>
+                            <select name="supplier" class="info" id="">
+                                <option value="" readonly>Selecione o fornecedor</option>
+                                <?=SupplierOptions()?>
+                            </select>
                         </label>
 
                         <div class="col">
@@ -79,7 +86,10 @@
                         </label>
 
                         <label for="tipo-compromisso">Tipo do Compromisso
-                            <select name="" class="info" id=""></select>
+                            <select name="" class="info" id="">
+                                <option value="" readonly>Selecione o tipo do compromisso</option>
+                                <?=CommitmentTypes()?>
+                            </select>
                         </label>
 
                         <label for="observacoes">Observação
@@ -87,11 +97,11 @@
                         </label>
                     </div>
                     <input type="submit" value="Cadastrar">
-                    <script src="./dist/commitments.js"></script>
                 </form>
             </div>
         </section>
     </main>
 </body>
+<script type="module" src="./dist/commitments.js"></script>
 
 </html>
