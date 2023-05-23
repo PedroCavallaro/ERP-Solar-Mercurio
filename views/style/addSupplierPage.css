@@ -15,7 +15,10 @@
 html {
   background: var(--body-color);
 }
-
+a{
+  text-decoration: none;
+  color:black;
+}
 main {
   margin-top: 10px;
   height: 100dvh;

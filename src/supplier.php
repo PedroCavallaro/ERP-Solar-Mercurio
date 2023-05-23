@@ -27,11 +27,9 @@ function getSuppliers() {
             <td>" . $data["nm_fornecedor"] . "</td>
             <td>" . $cnpj . "</td>
             <td>" . $data["ds_email"] . "</td>
-            <td>" . $data["nr_contato"] . "</td>
+            <td>" .$telefone . "</td>
             <td> <a href='editSupplierPage.php?id=".$data["id_fornecedor"]."'>Editar</a>
-            <td>" . $telefone . "</td>
-            <td> <a>Editar</a>
-                <a>Excluir</a>". "</td>
+            
         </tr>";
     }
 }

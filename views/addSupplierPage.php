@@ -96,10 +96,12 @@ include_once "../src/supplier.php"
                     </div>
                 </div>
                 <div id="formFoot">
-                    <label id="cancel" for="">
-                        <img src="assets/cancel.png" alt="">
-                        Cancelar
-                    </label>
+                    <a href="./supplier.php">
+                        <label id="cancel" for="">
+                            <img src="assets/cancel.png" alt="">
+                            Cancelar
+                        </label>
+                    </a>
                     <h1>Mercúrio</h1>
                     <label id="submitContainer" for="sendInfo">
                         <img src="../views/assets/check.png" alt="">

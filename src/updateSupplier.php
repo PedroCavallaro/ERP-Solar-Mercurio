@@ -1,7 +1,6 @@
 <?php
 include_once "../src/server.php";
 
-try{
     $bd = connect();
     $supName = filter_input(INPUT_POST, "supName", FILTER_SANITIZE_SPECIAL_CHARS);
     $supCnpj = filter_input(INPUT_POST, "supCnpj", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -14,7 +13,12 @@ try{
     $supNumber = filter_input(INPUT_POST, "supNumber", FILTER_SANITIZE_NUMBER_INT);
     $supExtra = filter_input(INPUT_POST, "supExtra", FILTER_SANITIZE_SPECIAL_CHARS);
     $id = $_GET["id"];
-    $sql = "UPDATE fornecedores SET
+
+    $sql = "
+    ALTER TABLE fornecedores DROP INDEX nr_cnpj;
+    ALTER TABLE fornecedores DROP INDEX nr_contato;
+    ALTER TABLE fornecedores DROP INDEX ds_email;
+    UPDATE fornecedores SET
                 nm_fornecedor='".$supName."',
                 nr_cnpj='".$supCnpj."',
                 ds_email='".$supEmail."',
@@ -26,17 +30,11 @@ try{
         nr_endereco='".$supNumber."',
         nr_cep ='".$supCep."',
         id_cidade='".$supCity."'
-        WHERE id_fornecedor = ".$id.";";
+        WHERE id_fornecedor = ".$id.";
+        ALTER TABLE fornecedores ADD UNIQUE (nr_cnpj);
+        ALTER TABLE fornecedores ADD UNIQUE (nr_contato);
+        ALTER TABLE fornecedores ADD UNIQUE (ds_email);";
 
 $bd->beginTransaction();
 $lines=$bd->exec($sql);
-
-if($lines == 1){
-    $bd->commit();
-    header("location:../views/editSupplierPage.php?id=$id");
-}else{  
-    $bd->rollBack();
-}
-}catch(Exception){
-    header("location:../views/editSupplierPage.php?id=$id&err=10283018230");
-}
+header("location:../views/editSupplierPage.php?id=$id");
