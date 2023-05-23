@@ -1,5 +1,6 @@
 <?php
-include_once "../src/supplier.php"
+include_once "../src/editSupplier.php";
+$id = $_GET["id"];
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -17,6 +18,7 @@ include_once "../src/supplier.php"
 
 <body>
     <header>
+        
         <nav>
             <div>
                 <img class="navImg" src="./assets/usericon.png" alt="" srcset="">
@@ -47,53 +49,12 @@ include_once "../src/supplier.php"
             </div>
         </section>
         <section class="rigth-menu">
-            <!-- action="../src/addSuplier.php" -->
-            <form class="info" id="formSupplier"  action="../src/addSuplier.php" method="post">
-                <h1>Cadastro de Fornecedor</h1>
+            <?php
+                echo "<form class='info' id='formSupplier'  action='../src/updateSupplier.php?id=$id' method='post'>"
+            ?>
+            <h1>Cadastro de Fornecedor</h1>
                 <div>
-                    <label for="">
-                        Nome:
-                        <input class="info" name="supName" type="text">
-                    </label>
-                    <label for="">
-                        CNPJ:
-                        <input class="info" name="supCnpj" type="text">
-                    </label>
-                    <label for="">
-                        Número de contato:
-                        <input class="info" name="nrContact" type="text">
-                    </label>
-                    <label for="">
-                        E-mail:
-                        <input class="info" name="supEmail" type="text">
-                    </label>
-                    <label for="">
-                        CEP:
-                        <input class="info" pattern="[0-9]" maxlength="8" name="supCep" type="text">
-                    </label>
-                    <label for="">
-                        Cidade:
-                        <select name="supCity" id="">
-                            <?=renderCities()?>
-                        </select>
-                    </label>
-                    <label for="">
-                        Logradouro:
-                        <input  class="info" id="logradouro" name="supLog" type="text">
-                    </label>
-                    <label for="">
-                        Bairro:
-                        <input class="info" id="bairro" name="supNeighbohood" type="text">
-                    </label> 
-                    <div class="extraInfo">
-                        <label for="">Número:
-                            <input class="info" name="supNumber" type="text">
-                        </label>
-                        <label for="">
-                            Complemento:
-                            <input name="supExtra" type="text">
-                        </label>
-                    </div>
+                   <?=renderInfo()?>
                 </div>
                 <div id="formFoot">
                     <label id="cancel" for="">
