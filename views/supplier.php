@@ -32,7 +32,7 @@ include_once "../src/supplier.php"
                 <a href="./commitments.php"><input type="button" value="Compromissos"></a>
                 <a href="./movements.php"><input type="button" value="Movimentações"></a>
                 <a href="./supplier.php"><input type="button" value="Fornecedores"></a>
-                <a href="#"><input type="button" value="Bancos"></a>
+                <a href="./banks.php"><input type="button" value="Bancos"></a>
             </div>
             <div class="mercury-main-container">
                 <div class="mercury-container">

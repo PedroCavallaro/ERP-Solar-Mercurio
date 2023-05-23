@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/index.css">
-    <title>Contas a Pagar - Compromissos</title>
+    <title>Contas a Pagar - Bancos</title>
 </head>
 
-<?php
-include_once "../src/index.php"
+<?php 
+include_once "../src/banks.php";
 ?>
 
 <body>
@@ -49,31 +48,26 @@ include_once "../src/index.php"
             <div class="info">
 
                 <div class="head-info">
-                    <h1>Compromissos</h1>
-                    <a href="./addCommitmentPage.php">
+                    <h1>Bancos</h1>
+                    <a href="./addBankPage.php">
                         <input type="button" value="Adicionar">
                     </a>
                 </div>
 
                 <table>
-                    <th>Cód Pedido</th>
-                    <th>Fornecedor</th>
-                    <th>Valor a pagar</th>
-                    <th>Data de Vencimento</th>
-                    <th>Valor Pago</th>
-                    <th>Data de Pagamento</th>
-                    <th>Tipo do Compromisso</th>
-                    <th>Status</th>
-                    <th>Observação</th>
-                    <th>Ação</th>
+                    <tr>
+                        <th>Número da Conta</th>
+                        <th>Agência</th>
+                        <th>Banco</th>
+                        <th>Tipo da Conta</th>
+                        <th>Ações</th>
+                    </tr>
                     <tbody>
-                        <?= commitmentFull() ?>
+                        <?= getBanks() ?>
                     </tbody>
                 </table>
             </div>
         </section>
     </main>
- 
 </body>
-
 </html>
