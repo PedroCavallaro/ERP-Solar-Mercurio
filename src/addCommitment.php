@@ -13,7 +13,7 @@ function SupplierOptions(){
         $html = $html."<option value='".$data["id_fornecedor"]."' >".$data["nm_fornecedor"]."</option>";
     }
     return $html;
-}
+} 
 
 function CommitmentTypes(){
     $bd = connect();
