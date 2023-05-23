@@ -89,9 +89,7 @@ function getMovement(){
             INNER JOIN bancos b
                 ON m.id_conta = b.id_banco
             INNER JOIN status_movimentacao s
-                ON m.id_status = s.id_status
-            WHERE m.nr_movimentado IS NOT null";
-     
+                ON m.id_status = s.id_status";     
      $result = $bd->query($sql);           
      while ($data = $result->fetch(PDO::FETCH_ASSOC)) {
         $valorPago = is_null($data["nr_movimentado"]) ? "-----" : "R$ " . $data["nr_movimentado"];

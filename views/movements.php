@@ -48,7 +48,9 @@ include_once "../src/index.php"
                 <h1>Movimentações</h1>
                 <table>
                     <th>Cód Compromisso</th>    
+                    <th>Agência</th>
                     <th>Conta</th>
+                    <th>Tipo Conta</th>
                     <th>Valor</th>
                     <th>Data da movimentação</th>
                     <tbody>
