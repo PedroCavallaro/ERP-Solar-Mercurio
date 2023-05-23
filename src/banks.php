@@ -37,8 +37,36 @@ function getBanks() {
                 </td>
             </tr>
         ";
+    }
+}
 
+function getBankNames() {
+    $bd = connect();
+
+    $sql = "SELECT id_banco, nm_banco FROM bancos";
+
+    $result = $bd->query($sql);
+
+    while ($data = $result->fetch(PDO::FETCH_ASSOC)) {
         
+        echo "
+            <option value=" . $data["id_banco"] . ">" . $data["nm_banco"] . "</option>
+        ";
+    }
+}
+
+function getTypes() {
+    $bd = connect();
+
+    $sql = "SELECT id_tipo_conta, ds_conta FROM tipos_de_contas";
+
+    $result = $bd->query($sql);
+
+    while ($data = $result->fetch(PDO::FETCH_ASSOC)) {
+        
+        echo "
+            <option value=" . $data["id_tipo_conta"] . ">" . $data["ds_conta"] . "</option>
+        ";
     }
 }
 ?>

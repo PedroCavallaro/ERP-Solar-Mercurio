@@ -7,18 +7,18 @@ window.addEventListener("load", () => {
 });
 
 //@ts-ignore
-const Toast = Swal.mixin({
-  toast: true,
-  position: "top-end",
-  showConfirmButton: false,
-  timer: 2000,
-  timerProgressBar: true,
-});
+// const Toast = Swal.mixin({
+//   toast: true,
+//   position: "top-end",
+//   showConfirmButton: false,
+//   timer: 2000,
+//   timerProgressBar: true,
+// });
 
 formBank?.addEventListener("submit", (e) => {
   infoBank.forEach((ele) => {
     if (ele.value === "") {
-      e.preventDefault();
+      //   e.preventDefault();
 
       ele.style.animation = "shake 1s";
       ele.style.borderBottomColor = "red";

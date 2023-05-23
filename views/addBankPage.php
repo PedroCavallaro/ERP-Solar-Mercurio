@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="./style/index.css">
     <link rel="stylesheet" href="./style/addCommitimentPage.css"> 
+
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
     <title>Contas a Pagar - Novo Banco</title>
 </head>
+
+<?php 
+include_once "../src/banks.php"
+?>
+
 <body>
     <header>
         <nav>
@@ -50,7 +59,7 @@
                     </a>
                 </div>
 
-                <form id="formBank" action="#" method="POST">
+                <form id="formBank" action="../src/addBank.php" method="POST">
                     <div class="form-main-content">
                         <label for="num-conta">Número da Conta
                             <input type="text" class="info" id="num-conta" name="num-conta">
@@ -61,11 +70,17 @@
                         </label>
 
                         <label for="banco-conta"> Banco
-                            <select name="banco-conta" class="info" id="banco-conta"></select>
+                            <select name="banco-conta" class="info" id="banco-conta">
+                                <option value="">Escolha um Banco</option>
+                                <?= getBankNames() ?>
+                            </select>
                         </label>
 
                         <label for="tipo-conta">Tipo da Conta
-                            <select name="tipo-conta" class="info" id="tipo-conta"></select>
+                            <select name="tipo-conta" class="info" id="tipo-conta">
+                                <option value="">Escolha um Banco</option>
+                                <?= getTypes() ?>
+                            </select>
                         </label>
                     </div>
                     <input type="submit" value="Cadastrar">
@@ -75,7 +90,6 @@
     </main>
 </body>
 
-<script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
-<script type="module" src="./dist/addBank.js"></script>
+<script src="./dist/addBank.js"></script>
 
 </html>
