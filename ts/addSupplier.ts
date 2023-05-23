@@ -1,8 +1,20 @@
 const info: NodeListOf<HTMLInputElement> = document.querySelectorAll(".info"),
-sendInfo: HTMLInputElement | null = document.querySelector("#sendInfo")
+sendInfo: HTMLInputElement | null = document.querySelector("#sendInfo"),
+formSupplier: HTMLFormElement | null = document.querySelector("#formSupplier") 
  //cep
+//@ts-ignore
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 2000,
+  timerProgressBar: true,
+})
+
+
 info[5].addEventListener('blur', async ()=>{
     try{
+        console.log(formSupplier)
         const response =  await fetch(`https://viacep.com.br/ws/${info[5].value}/json/`)
                                          .then((res) => res.json())
 
@@ -17,12 +29,15 @@ info[5].addEventListener('blur', async ()=>{
 
     }
 })
-sendInfo?.addEventListener('click', (e)=>{
-    e.preventDefault()
+
+formSupplier?.addEventListener('submit', (e)=>{
     info.forEach((ele)=>{
         if(ele.value === ""){
-            console.log("a")
             e.preventDefault()
+            Toast.fire({
+                icon: 'error',
+                title: 'Preencha os campos necessários'
+              })
         }
     })
 })
