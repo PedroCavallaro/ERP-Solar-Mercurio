@@ -20,7 +20,7 @@ function commitment() {
             <td>" . $data["cd_pedido"] . "</td>
             <td>" . $data["nm_fornecedor"] . "</td>
             <td>" . $data["nr_valor"] . "</td>
-            <td>" . $data["cd_pedido"] . "</td>
+            <td>" . $data["dt_vencimento"] . "</td>
             <td>" . status($data["nr_valor_pago"]) . "</td>
         </tr>";
     }
@@ -69,13 +69,42 @@ function commitmentFull() {
         ";
     }
 }
-
 function status($data) {
     if ($data == null) {
         return "Pendente";
     } else {
         return "Pago";
     }
+}
+function getMovement(){
+    $bd = connect();
+    $sql = "SELECT c.cd_pedido,
+                b.nm_banco,
+                s.ds_status,
+                m.nr_movimentado,
+                m.dt_movimentacao
+            FROM movimentacoes m
+            INNER JOIN compromissos c
+                ON m.id_compromisso = c.id_compromisso
+            INNER JOIN bancos b
+                ON m.id_conta = b.id_banco
+            INNER JOIN status_movimentacao s
+                ON m.id_status = s.id_status
+            WHERE m.nr_movimentado IS NOT null";
+     
+     $result = $bd->query($sql);           
+     while ($data = $result->fetch(PDO::FETCH_ASSOC)) {
+        $valorPago = is_null($data["nr_movimentado"]) ? "-----" : "R$ " . $data["nr_movimentado"];
+        $dataPaga = is_null($data["dt_movimentacao"]) ? "-----" : date("d/m/Y", strtotime($data["dt_movimentacao"]));
+
+        echo "<tr>
+                <td>".$data["cd_pedido"]."</td>    
+                <td>".$data["nm_banco"]."</td>
+                <td>".$valorPago."</td>
+                <td>".$dataPaga."</td>        
+            </tr>";
+
+     }
 }
 
 ?>
