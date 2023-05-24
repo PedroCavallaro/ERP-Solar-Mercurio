@@ -15,26 +15,29 @@ include_once "../src/server.php";
     $id = $_GET["id"];
 
     $sql = "
-    ALTER TABLE fornecedores DROP INDEX nr_cnpj;
-    ALTER TABLE fornecedores DROP INDEX nr_contato;
-    ALTER TABLE fornecedores DROP INDEX ds_email;
+    
     UPDATE fornecedores SET
                 nm_fornecedor='".$supName."',
                 nr_cnpj='".$supCnpj."',
                 ds_email='".$supEmail."',
                 nr_contato='".$nrContact."'
-            WHERE id_fornecedor = ".$id.";"."
-    UPDATE enderecos_fornecedor SET  ds_logradouro='".$supLog."',
-        ds_bairro='".$supNeighbohood."',
-        ds_complemento='".$supExtra."',
-        nr_endereco='".$supNumber."',
-        nr_cep ='".$supCep."',
-        id_cidade='".$supCity."'
-        WHERE id_fornecedor = ".$id.";
-        ALTER TABLE fornecedores ADD UNIQUE (nr_cnpj);
-        ALTER TABLE fornecedores ADD UNIQUE (nr_contato);
-        ALTER TABLE fornecedores ADD UNIQUE (ds_email);";
+            WHERE id_fornecedor = ".$id.";"."";
+//tabela de nedereço não está dando update
+$bd->beginTransaction();
+$lines=$bd->exec($sql);
+$bd->commit();
+
+
+$sql = " UPDATE enderecos_fornecedor SET  ds_logradouro='".$supLog."',
+            ds_bairro='".$supNeighbohood."',
+            ds_complemento='".$supExtra."',
+            nr_endereco='".$supNumber."',
+            nr_cep ='".$supCep."',
+            id_cidade='".$supCity."'
+            WHERE id_fornecedor = ".$id.";";
 
 $bd->beginTransaction();
 $lines=$bd->exec($sql);
+$bd->commit();
+
 header("location:../views/editSupplierPage.php?id=$id");

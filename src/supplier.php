@@ -13,7 +13,7 @@ function getSuppliers() {
 
     while ($data = $result->fetch(PDO::FETCH_ASSOC)) {
         $cnpj = sprintf(
-            '%d%d.%d%d%d.%d%d%d/%d%d%d-%d%d',
+            '%d%d.%d%d%d.%d%d%d/%d%d%d%d-%d%d',
             ...str_split($data["nr_cnpj"])
         );
 
