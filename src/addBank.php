@@ -1,53 +1,50 @@
 <?php
 include_once "../src/server.php";
-// try{
 
-    $numConta = filter_input(INPUT_POST, "num-conta", FILTER_SANITIZE_SPECIAL_CHARS);
-    $agConta = filter_input(INPUT_POST, "ag-conta", FILTER_SANITIZE_SPECIAL_CHARS);
-    $bancoConta = filter_input(INPUT_POST, "banco-conta", FILTER_SANITIZE_SPECIAL_CHARS);
-    $tipoConta = filter_input(INPUT_POST, "tipo-conta", FILTER_SANITIZE_SPECIAL_CHARS);
+try {
 
-    $bancoConta = intval($bancoConta);
+  $numConta = filter_input(INPUT_POST, "num-conta", FILTER_SANITIZE_SPECIAL_CHARS);
+  $agConta = filter_input(INPUT_POST, "ag-conta", FILTER_SANITIZE_SPECIAL_CHARS);
+  $bancoConta = filter_input(INPUT_POST, "banco-conta", FILTER_SANITIZE_SPECIAL_CHARS);
+  $tipoConta = filter_input(INPUT_POST, "tipo-conta", FILTER_SANITIZE_SPECIAL_CHARS);
 
-    var_dump($bancoConta);
+  $bancoConta = intval($bancoConta);
+  $agConta = intval($agConta);
 
-    $bd = connect();
+  $bd = connect();
 
-    $sql = 'INSERT INTO agencia(nr_agencia, id_banco) VALUES ("$agConta", "$bancoConta")';
-    
-    $bd->beginTransaction();
+  $sql = 'INSERT INTO agencia(nr_agencia, id_banco) VALUES (' . $agConta . ', ' . $bancoConta . ')';
 
-    $lines=$bd->exec($sql);
-    
-    if($lines == 1){
-        $bd->commit();
-    }else{
-        $bd->rollBack();
-    }
+  $bd->beginTransaction();
 
-    $sqlAg = "SELECT id_agencia FROM agencia ORDER BY id_agencia DESC";
+  $lines = $bd->exec($sql);
 
-    $result = $bd->query($sqlAg);
-    $data = $result->fetch(PDO::FETCH_ASSOC);
+  if ($lines == 1) {
+    $bd->commit();
+  } else {
+    $bd->rollBack();
+  }
 
-    echo $data["id_agencia"];
+  $sqlAg = "SELECT id_agencia FROM agencia ORDER BY id_agencia DESC";
 
-    $sql2 = 'INSERT INTO contas_bancarias(nr_conta, id_agencia, id_tipo) VALUES ("$numConta", "' . $data["id_agencia"] . '", "$tipoConta")';
+  $result = $bd->query($sqlAg);
+  $data = $result->fetch(PDO::FETCH_ASSOC);
 
-    $bd->beginTransaction();
+  echo $data["id_agencia"];
 
-    $lines=$bd->exec($sql2);
-    
-    if($lines == 1){
-        $bd->commit();
-    }else{
-        $bd->rollBack();
-    }
+  $sql2 = 'INSERT INTO contas_bancarias(nr_conta, id_agencia, id_tipo) VALUES ("' . $numConta . '", ' . $data["id_agencia"] . ', ' . $tipoConta . ')';
 
-    header("location:../views/banks.php");
+  $bd->beginTransaction();
 
-// }catch(Exception){
-//     // header("location:../views/addBankPage.php?err=12983918239812");
-// }
+  $lines = $bd->exec($sql2);
 
-?>
+  if ($lines == 1) {
+    $bd->commit();
+  } else {
+    $bd->rollBack();
+  }
+
+  header("location:../views/banks.php");
+} catch (Exception) {
+  header("location:../views/addBankPage.php?err=12983918239812");
+}
