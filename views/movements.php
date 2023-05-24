@@ -47,7 +47,8 @@ include_once "../src/movement.php"
             <div class="info">
                 <h1>Movimentações</h1>
                 <table>
-                    <th>Cód Compromisso</th>    
+                    <th>Id compromisso</th>
+                    <th>Código</th>    
                     <th>Numero da conta</th>
                     <th>Banco</th>
                     <th>Tipo Conta</th>
