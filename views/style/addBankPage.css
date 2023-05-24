@@ -1,0 +1,53 @@
+#formFoot {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#formFoot > a {
+  text-decoration: none;
+  color: #000;
+}
+
+#cancel {
+  cursor: pointer;
+  background-color: var(--button-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius);
+  height: 1.5rem;
+  padding: 4px;
+  width: 8rem;
+  border-radius: var(--radius);
+  border: 2px solid black;
+}
+
+#cancel > img {
+  width: 2.4rem;
+  height: 1.5rem;
+}
+
+#submitContainer > img {
+  width: 2.4rem;
+  height: 1.5rem;
+}
+
+#submitContainer {
+  cursor: pointer;
+  background-color: var(--button-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius);
+  height: 1.5rem;
+  padding: 4px;
+  width: 8rem;
+  border-radius: var(--radius);
+  border: 2px solid black;
+}
+
+#sendInfo {
+  all: unset;
+  padding: 2px;
+}
