@@ -90,19 +90,3 @@ textarea {
   background-color: var(--button-color);
   margin-left: 10px;
 }
-
-input[type="submit"] {
-  cursor: pointer;
-  border: solid 2px #000;
-  border-radius: var(--radius);
-  background-color: var(--confirm-button-color);
-  display: block;
-  margin-left: auto;
-  padding: 5px 15px;
-  font-weight: bold;
-}
-
-input[type="submit"]:hover {
-  background-color: #23c028;
-  transition: 0.7s ease;
-}
