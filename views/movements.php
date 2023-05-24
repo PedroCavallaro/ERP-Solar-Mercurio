@@ -1,5 +1,5 @@
 <?php
-include_once "../src/index.php"
+include_once "../src/movement.php"
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -48,11 +48,12 @@ include_once "../src/index.php"
                 <h1>Movimentações</h1>
                 <table>
                     <th>Cód Compromisso</th>    
-                    <th>Agência</th>
-                    <th>Conta</th>
+                    <th>Numero da conta</th>
+                    <th>Banco</th>
                     <th>Tipo Conta</th>
                     <th>Valor</th>
-                    <th>Data da movimentação</th>
+                    <th>Data</th>
+                    <th>Status</th>
                     <tbody>
                         <?=getMovement()?>
                     </tbody>

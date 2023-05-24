@@ -1,5 +1,6 @@
 <?php
-include_once "../src/index.php"
+include_once "../src/index.php";
+include_once "../src/movement.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
