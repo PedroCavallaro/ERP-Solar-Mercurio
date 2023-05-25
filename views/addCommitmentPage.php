@@ -55,7 +55,7 @@ include_once "../src/addCommitment.php"
                         <input id="close-button" type="button" value="Fechar">
                     </a>
                 </div>
-                <form id="formCommitment" action="./" method="POST">
+                <form id="formCommitment" action="../src/addCommitmentPage.php" method="POST">
                     <div>
                         <label for="cod-pedido">Código do Pedido
                             <input type="text" value="" class="info" id="cod-pedido" name="cod-pedido">
@@ -78,15 +78,15 @@ include_once "../src/addCommitment.php"
                         </div>
 
                         <label for="valor-pago">Valor Pago
-                            <input type="number" value="" class="info" id="valor-pago" name="valor-pago" step="0.01">
+                            <input type="number" value="0" id="valor-pago" name="valor-pago" step="0.01">
                         </label>
 
                         <label for="dt-pagamento">Data de Pagamento
-                            <input type="date" value="" class="info" id="dt-pagamento" name="dt-pagamento">
+                            <input type="date" value="0000-00-00" id="dt-pagamento" name="dt-pagamento">
                         </label>
 
                         <label for="tipo-compromisso">Tipo do Compromisso
-                            <select name="" class="info" id="">
+                            <select name="tipo-compromisso" class="info" id="tipo-compromisso">
                                 <option value="" readonly>Selecione o tipo do compromisso</option>
                                 <?=CommitmentTypes()?>
                             </select>
