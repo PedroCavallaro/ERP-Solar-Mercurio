@@ -1,24 +1,24 @@
 <?php
-include_once "../src/editSupplier.php";
-$id = $_GET["id"];
+include_once "../src/editCommitment.php";
+$id = $_GET['id'];
 ?>
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fornecedores</title>
-    <link rel="stylesheet" href="./style/addSupplierPage.css">
+    <title>Contas a Pagar - Novo Compromissos</title>
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/addCommitimentPage.css"> 
     <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+
     <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
-    <link rel="stylesheet" href="sweetalert2.min.css">
 </head>
 
 <body>
     <header>
-        
         <nav>
             <div>
                 <img class="navImg" src="./assets/usericon.png" alt="" srcset="">
@@ -37,7 +37,7 @@ $id = $_GET["id"];
                 <a href="./commitments.php"><input type="button" value="Compromissos"></a>
                 <a href="./movements.php"><input type="button" value="Movimentações"></a>
                 <a href="./supplier.php"><input type="button" value="Fornecedores"></a>
-                <a href="#"><input type="button" value="Bancos"></a>
+                <a href="./banks.php"><input type="button" value="Bancos"></a>
             </div>
             <div class="mercury-main-container">
                 <div class="mercury-container">
@@ -49,31 +49,23 @@ $id = $_GET["id"];
             </div>
         </section>
         <section class="rigth-menu">
-            <?php
-                echo "<form class='info' id='formSupplier'  action='../src/updateSupplier.php?id=$id' method='post'>"
-            ?>
-            <h1>Cadastro de Fornecedor</h1>
-                <div>
-                   <?=renderInfo()?>
-                </div>
-                <div id="formFoot">
-                    <a href="./supplier.php">
-                        <label id="cancel" for="">
-                            <img src="assets/cancel.png" alt="">
-                            Cancelar
-                        </label>
+            <div class="info">
+                <div class="head-info">
+                    <h1>Compromissos</h1>
+                    <a href="./commitments.php">
+                        <input id="close-button" type="button" value="Fechar">
                     </a>
-                    <h1>Mercúrio</h1>
-                    <label id="submitContainer" for="sendInfo">
-                        <img src="../views/assets/check.png" alt="">
-                        <input type="submit" id="sendInfo"  value="Atualizar">
-                    </label>
                 </div>
-            </form>
+                <?php
+                        echo "<form id='formCommitment' action='../src/updateCommitment.php?id=$id' method='POST'>"
+                ?>     
+                <?=editCommitment($id)?>
+                    
+                </form>
+            </div>
         </section>
     </main>
 </body>
-
-<script type="module" src="./dist/addSupplier.js"></script>
+<script type="module" src="./dist/commitments.js"></script>
 
 </html>

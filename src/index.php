@@ -57,7 +57,7 @@ function commitmentFull() {
             <td>" . $data["ds_observacao"] . "</td>
             <td>
                 <div class='actions-buttons'>
-                    <a id='edit-button' href='editCommitment.php/id=" . $data["id_compromisso"] . "'>
+                    <a id='edit-button' href='./editCommitment.php?id=" . $data["id_compromisso"] . "'>
                         <input type='button' value='Editar' />
                     </a>
                     <a id='del-button' href='delCommitment.php/id=" . $data["id_compromisso"] . "'>
